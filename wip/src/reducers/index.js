@@ -1,4 +1,5 @@
-import { bindActionCreators } from 'redux'
+// import { bindActionCreators } from 'redux'
+import { FETCH_WEATHER_START, FETCH_WEATHER_SUCCESS } from '../actions/index'
 
 export const initialState = {
     isLoading: false,
@@ -6,9 +7,21 @@ export const initialState = {
     error: 'No errors'
 }
 
+
 export const reducer = (state = initialState, action) => {
     switch(action.type){
-        default: 
-        return state
+        case FETCH_WEATHER_START:
+            return {
+                ...state,
+                isLoading: true
+            }
+        case FETCH_WEATHER_SUCCESS:
+            return {
+                ...state,
+                forecast: action.payload,
+                isLoading: false,
+            }
+         default:
+             return state
     }
 }

@@ -1,14 +1,14 @@
 import styled, { ThemeProvider } from 'styled-components'
 import { connect } from 'react-redux'
 
-import Test from './components/test'
+import Weekly from './components/weekly'
 
 function App(props) {
 
   return (
     <main className="App">
       <h1>Hello from App</h1>
-      <Test />
+      <Weekly />
     </main>
   );
 }
